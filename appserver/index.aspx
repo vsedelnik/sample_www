@@ -1,4 +1,8 @@
 <%@ Page Language="VB" %>
+<%
+Configuration.Text = "succeeded"
+%>
+
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -19,7 +23,7 @@
 <div class="code">
 
 <h3>  
-IIS configuration=<%= "succeeded" %>
+IIS configuration=<asp:label id="Configuration" runat="server" />
 </h3>
 
 </div>
