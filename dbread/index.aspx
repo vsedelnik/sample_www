@@ -9,7 +9,7 @@
   {
       using (SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["MyDbConn"].ToString()))
       {
-          SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM app_test", cn);
+          SqlCommand cmd = new SqlCommand("SELECT value FROM app_test WHERE id=1", cn);
           cn.Open();
           SqlDataReader rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
           rdr.Read();

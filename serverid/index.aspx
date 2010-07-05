@@ -1,8 +1,4 @@
 <%@ Page Language="VB" %>
-<%
-        ClientIP = Request.UserHostAddress
-        Label1.Text = ClientIP
-%>
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
@@ -26,7 +22,19 @@
 <h3>  
 IIS server
 </h3>
-ip=<asp:label id="Label1" runat="server" />
+<table BORDER="1">
+<th COLSPAN="2">ServerVariables</th>
+<%
+Dim var
+For Each var in Request.ServerVariables
+Call Response.Write("<TR>")
+Call Response.Write("<TD><B>" & var & "</B>:</TD>")
+Call Response.Write("<TD>" & Request.ServerVariables(var) _
+& "</TD>")
+Call Response.Write("</TR>")
+Next
+%>
+</table>
 
 </div>
 </div>
